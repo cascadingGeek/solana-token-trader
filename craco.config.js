@@ -14,12 +14,11 @@ module.exports = {
         util: require.resolve("util"),
         path: require.resolve("path-browserify"),
         os: require.resolve("os-browserify/browser"),
+        vm: require.resolve("vm-browserify"), // ← Moved this here
         fs: false,
         net: false,
         tls: false,
-        resolve: {
-          fallback: { vm: require.resolve("vm-browserify") },
-        },
+        // Removed the nested resolve object
       };
 
       webpackConfig.plugins = [
